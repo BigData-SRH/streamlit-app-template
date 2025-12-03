@@ -1,22 +1,20 @@
 import streamlit as st
 
-st.title("About")
+st.title("ℹ️ About This Dashboard")
 
-st.markdown(
-    """
-This is a **template Streamlit app** for teaching and small projects.
+st.write("""
+This application is a fully interactive **Video Game Sales Analysis Dashboard**  
+designed using **Streamlit**, **Altair**, **Plotly** and **Pandas**.
 
-You can adapt it by:
+### Features
+- CSV & Excel support  
+- Windows-compatible Spark fallback  
+- Trend analysis  
+- Genre & Publisher insights  
+- Correlation plots  
+- Market share evolution    
 
-1. Renaming the project in `README.md` and `app.py`
-2. Replacing `data/example.csv` with your own data
-3. Editing the page files in the `pages/` folder
-4. Adding more dependencies to `requirements.txt` if needed
-
----
-
-**Author**  
-_About you or your team_
-"""
-)
-
+### Created By
+**Pooja Shreni Addisherla 100002917**  
+Streamlit Data Visualization Project
+""")

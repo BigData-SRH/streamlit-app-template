@@ -1,26 +1,27 @@
 import streamlit as st
 
-st.title("Overview")
-st.write(
-    "This page gives a quick overview of the app structure and purpose."
-)
+st.title("🎮 PS4 Game Sales Analysis Dashboard")
 
-st.markdown(
-    """
-### App Structure
+st.write("""
+Welcome to the interactive Video Game Sales Dashboard!
 
-- `app.py` → Home page (this is what runs with `streamlit run app.py`)
-- `pages/` → Additional pages (automatically discovered by Streamlit)
-- `data/` → Example dataset(s)
-- `.streamlit/config.toml` → Theme and server settings
-- `requirements.txt` → Python dependencies
-- `README.md` → Setup instructions for users
+Navigate using the sidebar:
+- **Overview** — You're here  
+- **Data Explorer** — Upload XLSX and explore trends, charts & insights  
+- **About** — Project & author information  
 
-### How to extend
+Upload your dataset in **Data Explorer** to get started.
+""")
 
-- Duplicate this file to make a new page  
-- Change the title and content  
-- Add your own logic, visualizations, or widgets
-"""
-)
+st.markdown("---")
 
+st.subheader("📊 What You Can Do Here")
+
+st.write("""
+- **Analyze Global Game Sales**  
+- **Filter by Genre, Publisher, Year**  
+- **Explore Regional Performance**  
+- **Market Share Trends**  
+- **Genre + Publisher Insights**  
+- **Export Your Filtered Data**  
+""")
