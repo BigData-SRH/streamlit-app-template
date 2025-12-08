@@ -1,0 +1,81 @@
+/* Custom CSS for Streamlit App Design (Deep Dark Theme) */
+
+/* General App Background */
+[data-testid="stAppViewContainer"] > .main {
+    background-color: #171822; /* Very dark background */
+}
+
+/* Main Content Area Styling (Slightly lighter dark shade) */
+[data-testid="stVerticalBlock"] > .st-emotion-cache-1cypcdp, 
+[data-testid="stVerticalBlock"] > .st-emotion-cache-1cypcdp > div {
+    /* Target the container holding the main content in wide layout */
+    background-color: #1E1F29; 
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Sidebar Styling (Deep Blue/Purple as in the reference image) */
+[data-testid="stSidebar"] {
+    background-color: #2D3047; /* Dark Purple/Blue for sidebar */
+    color: white;
+    padding-top: 1rem;
+}
+
+/* Sidebar Title/Logo styling */
+[data-testid="stSidebarUserContent"] h2 {
+    color: #A0C4FF; /* Lighter color for the app name/logo */
+    font-weight: 700;
+    margin-bottom: 0;
+}
+[data-testid="stSidebarUserContent"] p {
+    color: #D3D3D3;
+    font-size: 0.85rem;
+}
+
+/* Navigation Links Style */
+/* Ensure all links are visible */
+.st-emotion-cache-10o4ymh a, 
+.st-emotion-cache-10o4ymh div[data-testid="stVerticalBlock"] > div > a {
+    color: white !important;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Selected Navigation Link Style (the blue box in the image) */
+.st-emotion-cache-10o4ymh a[aria-current="page"] {
+    background-color: #5C6BC0; /* Highlight color for active page */
+    color: white !important;
+}
+
+/* Primary Button Styling (Get Recommendation) */
+.st-emotion-cache-1jmps3m, .st-emotion-cache-1jmps3m:hover {
+    background-color: #5C6BC0 !important; 
+    border-color: #5C6BC0 !important;
+    color: white !important;
+}
+
+/* Secondary Buttons/Radio Group (Content Type/Genre/Price selection) */
+/* Target Streamlit's internal radio/button group elements */
+.st-emotion-cache-1fv4s4a button, 
+.st-emotion-cache-v0lqtw button { 
+    background-color: #373A47 !important; /* Darker button background */
+    color: white !important;
+    border: 1px solid #4A4D59 !important;
+}
+/* Active Secondary Button Highlight */
+.st-emotion-cache-1fv4s4a button:focus:not(:active),
+.st-emotion-cache-v0lqtw button[data-testid="stActiveOption"] {
+    background-color: #5C6BC0 !important; /* Active button highlight */
+    color: white !important;
+    border: 1px solid #5C6BC0 !important;
+}
+
+/* Headers and Text Color */
+h1, h2, h3, h4 {
+    color: white;
+}
+p, label, .st-emotion-cache-1l02z6d, .st-emotion-cache-1f81d83 {
+    color: #D3D3D3;
+}

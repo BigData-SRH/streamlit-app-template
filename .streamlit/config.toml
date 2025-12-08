@@ -1,10 +1,24 @@
+
+
 [theme]
-base="light"
-primaryColor="#0F766E"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F1F5F9"
-textColor="#0F172A"
+# Set the base to dark mode
+base="dark"
+# Primary highlight color (the blue/purple from the image)
+primaryColor="#5C6BC0"
+# Main background color (should match style.css #171822)
+backgroundColor="#171822"
+# Secondary background color (used for components like dataframes, text areas, input fields, etc.)
+secondaryBackgroundColor="#373A47" 
+textColor="white"
 font="sans serif"
 
-[server]
-headless = true
+[client]
+# Ensure the navigation links for pages are shown
+showSidebarNavigation = true
+
+# Use the full width of the browser
+[browser]
+gatherUsageStats = false
+
+[global]
+disableWatchdogWarning = true

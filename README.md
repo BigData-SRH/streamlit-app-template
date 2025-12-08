@@ -1,257 +1,81 @@
-# Streamlit App Template
+🎬 StreamFlix Advisor: Subscription Recommendation Dashboard
+The StreamFlix Advisor is a data-driven application built using Streamlit that helps users decide which streaming platform (Netflix or Amazon Prime Video) is the best value based on their preferred content genres, quality score (IMDb), content rating, and budget.
 
-This repository contains a clean starter template for building a multi-page Streamlit web application.  
-It is designed for teaching, student projects, and anyone who needs a clear, minimal structure to start from.
+✨ Features
+Personalized Recommendation: Receive a specific platform recommendation based on user-defined criteria (Genre, Rating, IMDb score, and Budget).
 
-The template includes:
+Dynamic Filtering: The recommendation engine filters content based on subscription price ranges to ensure budget suitability.
 
-- A Home page (`app.py`)
-- A multi-page setup (`pages/` folder)
-- An example dataset (`data/example_data.csv`)
-- A simple theme configuration (`.streamlit/config.toml`)
-- A complete environment setup guide (steps below)
-- A `requirements.txt` file for reproducible installs
+Data Overview (EDA): The Overview page provides visualizations for platform content distribution (Netflix vs. Amazon) and the top 5 most frequent content genres.
 
----
+Custom Dark Theme: Features a modern, custom dark-mode UI with a prominent blue/purple accent, designed for clarity and aesthetic appeal.
 
-## 1. Prerequisites
+📁 Project Structure
+This project uses Streamlit's multi-page feature for clean organization:
 
-You will need:
-
-- Python 3.9 or higher  
-- pip (Python package manager)  
-- Optional: Git, if you want to clone the repository instead of downloading the ZIP file  
-
-Check your versions:
-
-```bash
-python --version
-pip --version
-```
-
----
-
-## 2. Get the project
-
-### Option A — Clone the repository
-
-```bash
-git clone https://github.com/YOUR-USERNAME/streamlit-app-template.git
-cd streamlit-app-template
-```
-
-### Option B — Download ZIP
-
-1. Click "Code" → "Download ZIP"
-2. Extract the ZIP file
-3. Open the folder in your code editor
-
----
-
-## 3. Create a virtual environment (recommended)
-
-This isolates your project dependencies so they do not affect system-wide packages.
-
-Inside the project folder:
-
-```bash
-python -m venv .venv
-```
-
-### Activate the virtual environment
-
-macOS / Linux:
-
-```bash
-source .venv/bin/activate
-```
-
-Windows (PowerShell):
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-When activated, your terminal will show a prefix similar to:
-
-```
-(.venv)
-```
-
----
-
-## 4. Install dependencies
-
-With the virtual environment activated:
-
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-This installs Streamlit, pandas, numpy, and any other required packages.
-
----
-
-## 5. Run the Streamlit app
-
-Run the main entry file:
-
-```bash
-streamlit run app.py
-```
-
-Streamlit will open a local server, typically at:
-
-```
-http://localhost:8501
-```
-
-If the browser does not open automatically, copy and paste this URL into your browser.
-
-Use the sidebar navigation to switch between:
-
-- Home  
-- Overview  
-- Data Explorer  
-- About  
-
----
-
-## 6. Project Structure
-
-```text
 streamlit-app-template/
-├─ app.py
-├─ pages/
-│  ├─ 01_Overview.py
-│  ├─ 02_Data_Explorer.py
-│  └─ 03_About.py
-├─ requirements.txt
-├─ .gitignore
-├─ README.md
-├─ data/
-│  └─ example.csv
-└─ .streamlit/
-   └─ config.toml
-```
+├── app.py                  # Main page (Home) and Recommendation Engine
+├── pages/
+│   ├── 01_Compare.py       # (Placeholder) For future comparison logic
+│   ├── 02_Overview.py      # Data analysis, Top Genres, Platform Ratio charts
+│   └── 03_About.py         # (Placeholder) Information about the project/data
+├── .streamlit/
+│   ├── config.toml         # Streamlit configuration for dark theme and colors
+│   └── style.css           # Custom CSS for the unique dark theme and sidebar design
+├── data/
+│   └── Netflix_and_PrimeVideo.csv # The dataset used for analysis
+└── requirements.txt        # Python dependencies
+⚙️ Setup and Installation
+Follow these steps to get a copy of the project running on your local machine.
 
-### Description of folders and files
+Prerequisites
+You need Python 3.8+ installed on your system.
 
-| Path | Explanation |
-|------|-------------|
-| `app.py` | Main entry point for the app (Home page) |
-| `pages/` | Additional pages; Streamlit automatically detects them |
-| `data/` | Contains example datasets |
-| `.streamlit/config.toml` | Optional theme and server configuration |
-| `requirements.txt` | List of Python dependencies |
-| `.gitignore` | Specifies which files Git should ignore |
-| `README.md` | This documentation file |
+1. Clone the Repository
+Bash
 
----
+git clone [YOUR_REPO_URL]
+cd streamlit-app-template
+2. Prepare the Data
+Ensure your primary data file is correctly named and placed:
 
-## 7. Adding New Pages
+File Name: Netflix_and_PrimeVideo.csv
 
-Streamlit automatically adds any `.py` file inside the `pages/` directory as a page.
+Location: data/ directory
 
-To add a new page:
+The required columns in this CSV file are: Title, Year, Rating, IMDb, Genre, and Platform.
 
-1. Create a new file in `pages/`
-2. Use a filename with a numeric prefix to control order, for example:
+3. Install Dependencies
+Install all necessary Python libraries using the requirements.txt file:
 
-```
-pages/04_Analysis.py
-```
+Bash
 
-3. Add content such as:
+pip install -r requirements.txt
+(Note: The primary libraries are streamlit, pandas, and altair.)
 
-```python
-import streamlit as st
+4. Run the Application
+Launch the Streamlit application from your terminal:
 
-st.title("New Page")
-st.write("This is a custom page.")
-```
+Bash
 
-4. Run the app again:
-
-```bash
 streamlit run app.py
-```
+The application will automatically open in your default web browser (usually at http://localhost:8501).
 
-The new page will appear in the sidebar.
+🖥️ Usage
+Home Page (app.py):
 
----
+Navigate to the sidebar.
 
-## 8. Updating Dependencies
+Select your preferences (Genre, IMDb Score, Budget).
 
-If you install additional libraries, update the requirements file:
+Click "Get Recommendation" to see which platform offers the most titles matching your criteria within your budget.
 
-```bash
-pip install NEW_PACKAGE
-pip freeze > requirements.txt
-```
+Overview Page (02_Overview.py):
 
-This ensures others can reproduce your environment.
+View descriptive analytics on the dataset, including bar charts for top genres and a donut chart for platform content ratio.
 
----
+🤝 Contribution
+Feel free to submit issues or pull requests if you have suggestions for new features, bug fixes, or improvements to the data analysis or UI.
 
-## 9. Deployment (Short Overview)
-
-You can deploy this Streamlit app to:
-
-- Streamlit Community Cloud  
-- Render  
-- HuggingFace Spaces  
-- Fly.io  
-- Your own server using Docker  
-
-For most classroom or project cases, running locally with:
-
-```bash
-streamlit run app.py
-```
-
-is sufficient.
-
----
-
-## 10. Troubleshooting
-
-### Streamlit command not found  
-Your virtual environment may not be activated.
-
-### Example dataset not found  
-Ensure the file exists at:
-
-```
-data/example_data.csv
-```
-
-### Pages do not appear  
-The folder must be named exactly:
-
-```
-pages
-```
-
-(lowercase)
-
----
-
-## 11. Using This Template for Student Projects
-
-You can:
-
-- Fork this repository  
-- Replace the example data with your own dataset  
-- Add new multipage views  
-- Build data dashboards or analysis tools  
-- Submit their Streamlit project as a reproducible environment  
-
-This ensures consistency across all student groups.
-
----
-
-## 12. License
-
-MIT License (or replace with your own license)
+📄 License
+This project is licensed under the MIT License - see the LICENSE.md file (if applicable) for details.
